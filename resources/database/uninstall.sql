@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS `pre__ext_operation_log`;

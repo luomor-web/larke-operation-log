@@ -1,0 +1,8 @@
+{
+    "日志ID不能为空": "logid dont empty",
+    "日志信息不存在": "log empty",
+    "日志删除失败": "log delete error",
+    "日志删除成功": "log delete success",
+    "日志批量删除失败": "log delete many error",
+    "日志批量删除成功": "log delete many success",
+}
