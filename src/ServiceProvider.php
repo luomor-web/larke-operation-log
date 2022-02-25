@@ -49,6 +49,9 @@ class ServiceProvider extends BaseServiceProvider
         ],
     ];
     
+    // 包名
+    protected $pkgName = "larke/operation-log";
+    
     protected $slug = 'larke-admin.ext.operation-log';
     
     /**
@@ -136,35 +139,35 @@ class ServiceProvider extends BaseServiceProvider
         
         // 安装后
         $this->onInatll(function ($name, $info) use($thiz) {
-            if ($name == $thiz->info["name"]) {
+            if ($name == $thiz->pkgName) {
                 $thiz->install();
             }
         });
         
         // 卸载后
         $this->onUninstall(function ($name, $info) use($thiz) {
-            if ($name == $thiz->info["name"]) {
+            if ($name == $thiz->pkgName) {
                 $thiz->uninstall();
             }
         });
         
         // 更新后
         $this->onUpgrade(function ($name, $oldInfo, $newInfo) use($thiz) {
-            if ($name == $thiz->info["name"]) {
+            if ($name == $thiz->pkgName) {
                 $thiz->upgrade();
             }
         });
         
         // 启用后
         $this->onEnable(function ($name, $info) use($thiz) {
-            if ($name == $thiz->info["name"]) {
+            if ($name == $thiz->pkgName) {
                 $thiz->enable();
             }
         });
         
         // 禁用后
         $this->onDisable(function ($name, $info) use($thiz) {
-            if ($name == $thiz->info["name"]) {
+            if ($name == $thiz->pkgName) {
                 $thiz->disable();
             }
         });
