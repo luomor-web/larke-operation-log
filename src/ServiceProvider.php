@@ -20,27 +20,10 @@ use Larke\Admin\OperationLog\Middleware;
 class ServiceProvider extends BaseServiceProvider
 {
     /**
-     * 扩展信息
+     * composer
      */
-    public $info = [
-        'name' => 'larke/operation-log',
-        'title' => '操作日志',
-        'description' => '记录 admin 系统的相关操作日志',
-        'keywords' => [
-            'operation-log',
-        ],
-        'homepage' => 'https://github.com/deatil/larke-operation-log',
-        'authors' => [
-            [
-                'name' => 'deatil', 
-                'email' => 'deatil@github.com', 
-                'homepage' => 'https://github.com/deatil', 
-            ],
-        ],
-        'version' => '1.0.1',
-        'adaptation' => '^1.3',
-    ];
-    
+    public $composer = __DIR__ . '/../composer.json';
+
     /**
      * 扩展图标
      */
@@ -74,13 +57,10 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         // 扩展注册
-        $this->withExtension(
-            $this->info['name'], 
-            $this->withExtensionInfo(
-                __CLASS__, 
-                $this->info, 
-                $this->icon
-            )
+        $this->withExtensionFromComposer(
+            __CLASS__, 
+            $this->composer,
+            $this->icon
         );
         
         // 事件
