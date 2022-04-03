@@ -41,7 +41,7 @@ class OperationLog extends BaseController
         $start = (int) $request->input('start', 0);
         $limit = (int) $request->input('limit', 10);
         
-        $order = $this->formatOrderBy($request->input('order', 'ASC'));
+        $order = $this->formatOrderBy($request->input('order', 'create_time__ASC'));
         
         $searchword = $request->input('searchword', '');
         $orWheres = [];
@@ -83,7 +83,7 @@ class OperationLog extends BaseController
             ->offset($start)
             ->limit($limit)
             ->withCertain('admin', ['name', 'nickname', 'email', 'avatar', 'last_active', 'last_ip'])
-            ->orderBy('create_time', $order)
+            ->orderBy($order[0], $order[1])
             ->get()
             ->toArray(); 
         

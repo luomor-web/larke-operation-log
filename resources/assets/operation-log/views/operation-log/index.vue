@@ -226,7 +226,7 @@ export default {
         searchword: '',
         start_time: '',
         end_time: '',
-        order: 'DESC',
+        order: 'create_time__DESC',
         status: '',
         method: '',
         page: 1,
@@ -246,8 +246,8 @@ export default {
         { label: 'OPTIONS', key: 'OPTIONS' }
       ],
       sortOptions: [
-        { label: '正序', key: 'ASC' },
-        { label: '倒叙', key: 'DESC' }
+        { key: 'create_time__ASC', label: '正序' },
+        { key: 'create_time__DESC', label: '倒叙' }
       ],
       detail: {
         dialogVisible: false,
