@@ -18,7 +18,7 @@ const route = {
   children: [
     {
       path: '/operation-log/list',
-      component: () => import('./views/operation-log/index'),
+      component: () => import('./views/index'),
       name: 'OperationLogList',
       meta: {
         title: 'OperationLogList',

@@ -190,7 +190,7 @@ import {
     getDetail, 
     deleteLog, 
     clearLog 
- } from '../../api/index'
+ } from '../api/index'
 
 export default {
   name: 'AdminLogIndex',
