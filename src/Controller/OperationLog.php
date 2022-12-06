@@ -6,6 +6,7 @@ namespace Larke\Admin\OperationLog\Controller;
 
 use Illuminate\Http\Request;
 
+use Larke\Admin\Annotation\RouteRule;
 use Larke\Admin\Http\Controller as BaseController;
 
 use Larke\Admin\OperationLog\Model\OperationLog as OperationLogModel;
@@ -13,29 +14,31 @@ use Larke\Admin\OperationLog\Model\OperationLog as OperationLogModel;
 /**
  * 操作日志
  *
- * @title 操作日志
- * @desc 操作日志管理
- * @order 550
- * @auth true
- * @slug larke-admin.ext.operation-log
- *
  * @create 2022-2-15
  * @author deatil
  */
+#[RouteRule(
+    title: "操作日志", 
+    desc:  "操作日志管理",
+    order: 550,
+    auth:  true,
+    slug:  "larke-admin.ext.operation-log"
+)]
 class OperationLog extends BaseController
 {
     /**
      * 列表
      *
-     * @title 日志列表
-     * @desc 操作日志全部列表
-     * @order 551
-     * @auth true
-     * @parent larke-admin.ext.operation-log
-     *
      * @param  Request  $request
      * @return Response
      */
+    #[RouteRule(
+        title:  "日志列表", 
+        desc:   "操作日志全部列表",
+        order:  551,
+        parent: "larke-admin.ext.operation-log",
+        auth:   true
+    )]
     public function index(Request $request)
     {
         $start = (int) $request->input('start', 0);
@@ -98,15 +101,16 @@ class OperationLog extends BaseController
     /**
      * 详情
      *
-     * @title 日志详情
-     * @desc 操作日志详情
-     * @order 552
-     * @auth true
-     * @parent larke-admin.ext.operation-log
-     *
      * @param string $id
      * @return Response
      */
+    #[RouteRule(
+        title:  "日志详情", 
+        desc:   "操作日志详情",
+        order:  552,
+        parent: "larke-admin.ext.operation-log",
+        auth:   true
+    )]
     public function detail(string $id)
     {
         if (empty($id)) {
@@ -126,15 +130,16 @@ class OperationLog extends BaseController
     /**
      * 删除
      *
-     * @title 日志删除
-     * @desc 操作日志删除
-     * @order 553
-     * @auth true
-     * @parent larke-admin.ext.operation-log
-     *
      * @param string $id
      * @return Response
      */
+    #[RouteRule(
+        title:  "日志删除", 
+        desc:   "操作日志删除",
+        order:  553,
+        parent: "larke-admin.ext.operation-log",
+        auth:   true
+    )]
     public function delete(string $id)
     {
         if (empty($id)) {
@@ -158,15 +163,16 @@ class OperationLog extends BaseController
     /**
      * 清空一个月前的操作日志|清空特定ID日志
      *
-     * @title 清空日志
-     * @desc 清空操作日志
-     * @order 554
-     * @auth true
-     * @parent larke-admin.ext.operation-log
-     *
      * @param  Request  $request
      * @return Response
      */
+    #[RouteRule(
+        title:  "清空日志", 
+        desc:   "清空操作日志",
+        order:  554,
+        parent: "larke-admin.ext.operation-log",
+        auth:   true
+    )]
     public function clear(Request $request)
     {
         $ids = $request->input('ids');

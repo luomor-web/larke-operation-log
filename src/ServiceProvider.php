@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Artisan;
 
 use Larke\Admin\Extension\Rule;
+use Larke\Admin\Extension\Menu;
 use Larke\Admin\Extension\ServiceProvider as BaseServiceProvider;
-use Larke\Admin\Frontend\Support\Menu;
 
 // 文件夹
 use Larke\Admin\OperationLog\Model;
