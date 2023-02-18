@@ -4,6 +4,7 @@ declare (strict_types = 1);
 
 namespace Larke\Admin\OperationLog\Observer;
 
+use Larke\Admin\Support\Uuid;
 use Larke\Admin\OperationLog\Model\OperationLog as OperationLogModel;
 
 class OperationLog
@@ -20,7 +21,7 @@ class OperationLog
      */
     public function creating(OperationLogModel $model)
     {
-        $model->id = md5(mt_rand(100000, 999999).microtime().uniqid());
+        $model->id = Uuid::toString();
         
         $model->create_time = time();
         $model->create_ip = request()->ip();

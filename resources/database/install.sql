@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS `pre__ext_operation_log`;
 CREATE TABLE `pre__ext_operation_log` (
-  `id` char(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '日志ID',
-  `admin_id` char(32) CHARACTER SET utf8mb4 NOT NULL DEFAULT '' COMMENT '管理账号ID',
+  `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '日志ID',
+  `admin_id` char(36) CHARACTER SET utf8mb4 NOT NULL DEFAULT '' COMMENT '管理账号ID',
   `admin_name` varchar(20) CHARACTER SET utf8mb4 NOT NULL DEFAULT '' COMMENT '管理账号',
   `url` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `method` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '请求类型',

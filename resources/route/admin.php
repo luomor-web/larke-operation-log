@@ -12,13 +12,13 @@ Extension::routes(function ($router) {
             
             $router->get('/operation-log/{id}', 'OperationLog@detail')
                 ->name('larke-admin.operation-log.detail')
-                ->where('id', '[A-Za-z0-9]+');
+                ->where('id', '[A-Za-z0-9\-]+');
             
             $router->delete('/operation-log/clear', 'OperationLog@clear')
                 ->name('larke-admin.operation-log.clear');
             
             $router->delete('/operation-log/{id}', 'OperationLog@delete')
                 ->name('larke-admin.operation-log.delete')
-                ->where('id', '[A-Za-z0-9]+');
+                ->where('id', '[A-Za-z0-9\-]+');
         });
 });
