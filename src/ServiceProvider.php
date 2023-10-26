@@ -60,7 +60,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         // 扩展注册
-        $this->withExtensionFromComposer(
+        $this->addExtension(
             __CLASS__, 
             $this->composer,
             $this->icon
