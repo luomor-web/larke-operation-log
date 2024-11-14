@@ -1,25 +1,25 @@
 {
-    "name": "larke/operation-log",
+    "name": "luomor/larke-operation-log",
     "description": "记录 admin 系统的相关操作日志。",
     "keywords": [
         "operation-log",
         "larke-admin",
         "larke-operation-log"
     ],
-    "homepage": "https://github.com/deatil/larke-operation-log",
+    "homepage": "https://github.com/luomor-web/larke-operation-log",
     "type": "library",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "deatil",
-            "email": "deatil@github.com",
-            "homepage": "https://github.com/deatil",
+            "name": "Peter Zhang",
+            "email": "zhangchunsheng423@gmail.com",
+            "homepage": "https://github.com/zhangchunsheng",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.0",
-        "lake/larke-admin":"^1.6"
+        "luomor/larke-admin":"^1.6"
     },
     "autoload": {
         "psr-4": {
